@@ -5,7 +5,7 @@ import '../components/Footer.scss';
 const Footer = () => (
 	<div>
 		<div className="footer">
-			<a className="github" href="">Built with React.js</a>
+			<a className="github" href="https://github.com/TrashPanda/react-hackernews">Built with React.js</a>
 		</div>
 	</div>
 );

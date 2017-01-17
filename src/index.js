@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import App from './containers/App';
@@ -22,7 +22,7 @@ render(
 	<Provider store={store}>
 		<Router history={history}>
 			<Route path="/" component={App}>]
-				<IndexRoute component={PostView} />
+				<IndexRedirect to="news/1" />
 				<Route path="news/*" component={PostView} />
 				<Route path="show/*" component={PostView} />
 				<Route path="ask/*" component={PostView} />

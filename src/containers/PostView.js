@@ -18,11 +18,12 @@ class PostView extends PureComponent {
 		this.postList = this.postList.bind(this);
 	}
 
-	// initial fetch
 	componentDidMount() {
 		const page = this.props.params.splat;
+
 		const path = this.props.routes[1].path;
 
+		console.log(this.props)
 		const storyType = path.split('/')[0];
 		this.props.fetch(`/${storyType}?page=${page}`);
 	}
