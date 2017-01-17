@@ -1,3 +1,3 @@
 ## React hackernews
 
-A hackernew client built with react/redux/rx
+A hackernews client built with react/redux/rx
