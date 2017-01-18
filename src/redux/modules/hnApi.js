@@ -12,65 +12,65 @@ const FETCH_COMMENTS_FULFILLED = 'FETCH_COMMENTS_FULFILLED';
 
 // action creators
 export const fetchPosts = (url) => ({
-	type: FETCH_POSTS,
-	url
+  type: FETCH_POSTS,
+  url
 });
 export const fetchPostsFulfilled = (payload) => ({
-	type: FETCH_POSTS_FULFILLED,
-	payload
+  type: FETCH_POSTS_FULFILLED,
+  payload
 });
 
 export const fetchComments = (url) => ({
-	type: FETCH_COMMENTS,
-	url
+  type: FETCH_COMMENTS,
+  url
 });
 export const fetchCommentsFulfilled = (payload) => ({
-	type: FETCH_COMMENTS_FULFILLED,
-	payload
+  type: FETCH_COMMENTS_FULFILLED,
+  payload
 });
 
 // epics
 export const fetchPostsEpic = (action$) => (
-	__fetch(FETCH_POSTS, action$, fetchPostsFulfilled)
+  __fetch(FETCH_POSTS, action$, fetchPostsFulfilled)
 );
 
 export const fetchCommentsEpic = (action$) => (
-	__fetch(FETCH_COMMENTS, action$, fetchCommentsFulfilled)
+  __fetch(FETCH_COMMENTS, action$, fetchCommentsFulfilled)
 );
 
 // type: (actionType: actionType, action$: Observable, fulfilled: function) => (Observable)
 function __fetch(actionType, action$, fulfilled) {
-	return action$.ofType(actionType)
-		.mergeMap(action =>
-			Observable.ajax.getJSON(`${baseUrl}${action.url}`)
-				.map(response => fulfilled(response))
-		);
+  return action$.ofType(actionType)
+    .mergeMap(action =>
+      Observable.ajax.getJSON(`${baseUrl}${action.url}`)
+        .map(response => fulfilled(response))
+    );
 }
 
 // reducers
 const asyncData = (state = {}, action) => {
-	switch (action.type) {
-		case FETCH_POSTS:
-			return state;
+  switch (action.type) {
+    case FETCH_POSTS:
+      return state;
 
-		case FETCH_POSTS_FULFILLED:
-			return {
-				...state,
-				posts: action.payload
-			};
+    case FETCH_POSTS_FULFILLED:
+      return {
+        ...state,
+        posts: action.payload
+      };
 
-		case FETCH_COMMENTS:
-			return state;
+    case FETCH_COMMENTS:
+      return state;
 
-		case FETCH_COMMENTS_FULFILLED:
-			return {
-				...state,
-				comments: action.payload
-			};
+    case FETCH_COMMENTS_FULFILLED:
+      return {
+        ...state,
+        comments: action.payload
+      };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };
 
 export default asyncData;

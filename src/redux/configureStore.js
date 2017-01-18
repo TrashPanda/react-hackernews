@@ -5,10 +5,10 @@ import { rootEpic, rootReducer } from './modules/root';
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
 export default function configureStore() {
-	const store = createStore(
-		rootReducer,
-		applyMiddleware(epicMiddleware)
-	);
+  const store = createStore(
+    rootReducer,
+    applyMiddleware(epicMiddleware)
+  );
 
-	return store;
+  return store;
 }

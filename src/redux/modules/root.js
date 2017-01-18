@@ -7,12 +7,12 @@ import dataReducer, {fetchPostsEpic, fetchCommentsEpic} from './hnApi';
 import currentPostReducer from './currentPost';
 
 export const rootEpic = combineEpics(
-	fetchPostsEpic,
-	fetchCommentsEpic
+  fetchPostsEpic,
+  fetchCommentsEpic
 );
 
 export const rootReducer = combineReducers({
-	data: dataReducer,
-	currentPost: currentPostReducer,
-	routing: routerReducer	// this one is special, for routing
+  data: dataReducer,
+  currentPost: currentPostReducer,
+  routing: routerReducer  // this one is special, for routing
 });

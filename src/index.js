@@ -19,17 +19,17 @@ const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
 render(
-	<Provider store={store}>
-		<Router history={history}>
-			<Route path="/" component={App}>]
-				<IndexRedirect to="news/1" />
-				<Route path="news/*" component={PostView} />
-				<Route path="show/*" component={PostView} />
-				<Route path="ask/*" component={PostView} />
-				<Route path="jobs/*" component={PostView} />
-				<Route path="item/*" component={CommentView} />
-			</Route>
-		</Router>
-	</Provider>,
-	document.getElementById('root')
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={App}>]
+        <IndexRedirect to="news/1" />
+        <Route path="news/*" component={PostView} />
+        <Route path="show/*" component={PostView} />
+        <Route path="ask/*" component={PostView} />
+        <Route path="jobs/*" component={PostView} />
+        <Route path="item/*" component={CommentView} />
+      </Route>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
 );
