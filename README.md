@@ -13,7 +13,7 @@ This app is built mainly upon React/Redux/Rxjs/react-router/sass. In the followi
 
 ### Manage view with React
 
-In order to make view components reusable and flexible, local state should be kept at minimal. Although local state could still exist, shared state between components is a sign that this state should reside in the store(here we use redux store). Separation of container and presentational components, so that presentational components can act like pure renderers while containers handle app state, logic and pass down props to renderers. This organisation also makes testing and refactor easier.
+In order to make view components reusable and flexible, local state should be kept at minimal. Although local state could still exist, shared state between components is a sign that this state should reside in the store(here we use redux store). Separate container and presentational components, so that presentational components can act like pure renderers while containers handle app state, logic and pass down props to renderers. This organisation also makes testing and refactor easier.
 
 On a side note, compare React to other frameworks like Angular/Angular2/vue/ember, and the key difference that React is only a view library which requires many other tools in order to build a complete app. While they aim to solve similar problem in the grand scheme, the choice of the tools is not about dependant on the scope of the project.
 
