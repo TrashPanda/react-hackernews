@@ -39,4 +39,4 @@ Our app is beginning to be in the decent shape, but we could improve the project
 * put logic in web worker thread to keep it from blocking ui in the main thread
 ..
 
-As long as we stick to the principle, this architecture has the ability to scale with reasonably good performance even we continuously adding more components and complex logic. In my opinion, similar architecture could be leveraged to enhance other libraries too, or even into mobile apps. The well defined ui components/applications state/async operations is a good solution to many common problems.
+As long as we stick to the principle, this architecture has the ability to scale with reasonably good performance even we continuously adding more components and complex logic.
