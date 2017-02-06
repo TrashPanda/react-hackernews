@@ -37,4 +37,5 @@ Our app is beginning to be in the decent shape, but we could improve the project
 * add unit testing with libraries like Jest
 * put logic in web worker thread to keep it from blocking ui in the main thread
 ..
+
 As long as we stick to the principle, this architecture has the ability to scale with reasonably good performance even we continuously adding more components and complex logic.
