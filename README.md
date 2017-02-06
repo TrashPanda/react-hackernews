@@ -11,11 +11,11 @@ A hackernews client built with react/redux/rx/sass
 
 This app is built mainly upon React/Redux/Rxjs/react-router/sass. In the following section I will go through how this stack works.
 
-### Manage view with React
+### Manage ui components with React
 
-In order to make view components reusable and flexible, local state should be kept at minimal. Although local state could still exist, shared state between components is a sign that this state should reside in the store(here we use redux store). Separate container and presentational components, so that presentational components can act like pure renderers while containers handle app state, logic and pass down props to renderers. This organisation also makes testing and refactor easier.
+In order to make ui components reusable and flexible, local state should be kept at minimal. Although local state could still exist, shared state between components is a sign that this state should reside in the store(here we use redux store). Separate container and presentational components, so that presentational components can act like pure renderers while containers handle app state, logic and pass down props to renderers. This organisation also makes testing and refactor easier.
 
-On a side note, compare React to other frameworks like Angular/Angular2/vue/ember, and the key difference that React is only a view library which requires many other tools in order to build a complete app. While they aim to solve similar problem in the grand scheme, the choice of the tools is not about dependant on the scope of the project.
+On a side note, compare React to other frameworks like Angular/Angular2/vue/ember, and the key difference that React is only a view library which requires many other tools in order to build a complete app. While they aim to solve similar problem in the grand scheme, the choice of the tools depends on the scope of the project.
 
 ### Manage application state with Redux
 
@@ -38,4 +38,4 @@ Our app is beginning to be in the decent shape, but we could improve the project
 * add unit testing with libraries like Jest
 * put logic in web worker thread to keep it from blocking ui in the main thread as mentioned before
 
-Stick to the good practices, keep the ui components/states/asynce operation well organized, this architecture would be able to scale with reasonably good performance even we continuously add more components and complex logic.
+Stick to the good practices, keep the ui components/application state/async operation well organized, this architecture would be able to scale with reasonably good performance even we continuously add more components and complex logic.
