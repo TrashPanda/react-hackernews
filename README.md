@@ -17,7 +17,7 @@ In order to make view components reusable and flexible, local state should be ke
 
 On a side note, compare React to other frameworks like Angular/Angular2/vue/ember, and the key difference that React is only a view library which requires many other tools in order to build a complete app. While they aim to solve similar problem in the grand scheme, the choice of the tools is not about dependant on the scope of the project.
 
-### Manage model(store) with Redux
+### Manage application state with Redux
 
 Redux is a state container, and a good replacement for flux pattern. One of the main pain point of flux is when dealing with multiple async source flux itself doesn't enforce single or multiple store. Redux improved on this aspect by using a single state tree which holds the references and history of all the states. If we strip down React/redux to their core functionality, we have redux handling business logic while React acts like a renderer function. In a way it's similar how modern graphic api like dx12/vulkan works, which are mostly stateless. This structure could even naturally give rise to a dual thread model, where we put ui renderer and logic in separate threads to increase the performance. Redux also has the bonus of bringing time travel functionality to the app, where the state history of the app can be saved and replayed.  However, Redux itself is synchronous. How does it deal with asynchronous operations? This brings the next point.
 
